@@ -8,7 +8,7 @@ const optionList = [
         name: 'path',
         alias: 'p',
         required: true,
-        type:String,
+        type: String,
         description: 'Folder path. Required.'
     },
     {
@@ -30,7 +30,7 @@ const usage = commandLineUsage(usageNotes)
 let options = null;
 try {
     options = commandLineArgs(optionList)
-} catch(e) {
+} catch (e) {
     console.log(usage);
     return;
 }
@@ -48,7 +48,7 @@ if (!fs.existsSync(options.path)) {
 
 try {
     treeFunction(options.path, options.depth)
-} catch(e) {
+} catch (e) {
     console.log(e);
     console.log(usage);
 }

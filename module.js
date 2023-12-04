@@ -12,7 +12,7 @@ const setLevelLinesHandler = (counter) => {
         spacer += '  '
     }
 
-    return spacer+'|'+line
+    return spacer + '|' + line
 }
 
 const printPathHandler = (parentFolder, childFolder, depth, counter) => {
@@ -33,13 +33,13 @@ const printPathHandler = (parentFolder, childFolder, depth, counter) => {
     }
 }
 
-const treeFunction = (folderPath, depth)=>{
-    const defaultDepth = depth?? 2
+const treeFunction = (folderPath, depth) => {
+    const defaultDepth = depth ?? 2
     const folderArray = fs.readdirSync(folderPath)
     const counter = 1
-    
+
     console.log(path.basename(folderPath))
-    
+
     folderArray?.map(el => {
         printPathHandler(folderPath, el, defaultDepth, counter)
     })
